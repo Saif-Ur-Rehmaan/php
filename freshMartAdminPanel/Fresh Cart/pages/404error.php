@@ -55,7 +55,37 @@
             <!-- content -->
             <div class="col-md-6">
               <div class=" mb-6 mb-lg-0">
+
+
+
+
+
+
+
+
+
+
+
+                <?php
+                if (isset($_GET['signin'])) {
+                  echo "<h1>Something’s wrong with the database connection...</h1>";
+                  
+                }else{
+                ?>
                 <h1>Something’s wrong here...</h1>
+                <?php }?>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
                 <p class="mb-8">We can’t find the page you’re looking for.<br>
                   Check out our help center or head back to home.</p>
    <!-- btn -->

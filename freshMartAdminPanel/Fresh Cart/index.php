@@ -727,7 +727,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
     <?php 
-    session_start();
+    // session_start(); 
     if (isset($_SESSION['UserName'])) {
       ?>
       <h4>hi <?php $_SESSION['UserName']?></h4>

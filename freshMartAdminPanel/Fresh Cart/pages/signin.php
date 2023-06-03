@@ -89,28 +89,31 @@
 
             <?php
             if (isset($_GET['signin'])) {
-              $email=$_POST['email'];
-              $password=$_POST['password'];
+
+              include '../dashboard/includes/config.php';
+              
+              $email = $_POST['email'];
+              $password = $_POST['password'];
+              
               print_r($_POST);
-              $connection=mysqli_connect('localhost','root','','freshcart');
-              $queryFor1Row="SELECT `email`,`password` from `customers` where `email`='$email' AND `password`= '$password'";;
-              $responce=mysqli_query($connection,$queryFor1Row);
-              $row=mysqli_fetch_assoc($responce);
+              
+              $queryFor1Row = "SELECT `email`,`password` from `customers` where `email`='$email' AND `password`= '$password'";;
+              $responce = mysqli_query($connection, $queryFor1Row);
+              $row = mysqli_fetch_assoc($responce);
+              
               print_r($row);
-              if ($_POST==$row) {
+              
+              if ($_POST == $row) {
                 echo '<script>alert("login success")</script>';
                 // session_start();
                 // $_SESSION['UserEmail']=$email;
                 // $_SESSION['UserName']=$row['firstName'].$row['lastName'];
                 header('location: ../index.php');
                 die();
-              }else {
-                
-                header('location: signin.php');
-                die();
               }
             }
             ?>
+
 
 
 
